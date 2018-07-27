@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:dnd5"
+             x:Class="dnd5.MainPage"
+             BackgroundColor="Black"
+             Title="DND 5e Character Generator ">
+    <StackLayout Padding="5">
+        <ListView x:Name="CharactersList" Margin="10" BackgroundColor="SlateGray" VerticalOptions="FillAndExpand" HorizontalOptions="Center" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="18" TextColor="AliceBlue" />
+                                <Label Text="{Binding ClassName}" FontSize="15" TextColor="Red" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="NewCharacterButton"
+                Text="New Character"
+                Clicked="NewCharacterClicked"
+                Margin="10"
+                BackgroundColor="SlateGray"
+                TextColor="White"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="Center">
+
+        </Button>
+    </StackLayout>
+
+
+</ContentPage>

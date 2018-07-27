@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dnd5.Pages.CreateCharacterPage"
+             Title="New Character">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="picker" 
+                Title="Select Class" 
+                ItemsSource="{Binding AvailableClasses}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding SelectedClass}"/>
+
+            <Label Text="{Binding SelectedClass.Name}" IsVisible="True" x:Name="TxtName" Margin="0,100,0,0"/>
+            <Label Text="{Binding SelectedClass.Index}" IsVisible="True" x:Name="TxtIndex"/>
+            <Label Text="{Binding SelectedClass.HitDie}" IsVisible="True" x:Name="TxtHitDice"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
